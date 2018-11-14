@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145F945A219C8BC300F618C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145F9459219C8BC300F618C6 /* SettingsViewController.swift */; };
 		14C7A335219B4B5E00E335CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A334219B4B5E00E335CA /* AppDelegate.swift */; };
 		14C7A33A219B4B5E00E335CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C7A338219B4B5E00E335CA /* Main.storyboard */; };
 		14C7A33C219B4B6000E335CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C7A33B219B4B6000E335CA /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145F9459219C8BC300F618C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		14C7A331219B4B5E00E335CA /* Insperation Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insperation Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C7A334219B4B5E00E335CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C7A339219B4B5E00E335CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				14C7A346219B5B0700E335CA /* TimerViewController.swift */,
 				14C7A35C219C464100E335CA /* QuoteViewController.swift */,
+				145F9459219C8BC300F618C6 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				14C7A34D219C2EF500E335CA /* Quote.swift in Sources */,
 				14C7A34B219BD05D00E335CA /* AppValues.swift in Sources */,
 				14C7A352219C303C00E335CA /* NetworkClient.swift in Sources */,
+				145F945A219C8BC300F618C6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
