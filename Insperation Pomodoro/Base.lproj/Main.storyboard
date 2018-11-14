@@ -36,6 +36,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-Z2-Bs5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="tintColor" red="0.68235294120000001" green="0.94509803920000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="kPm-ak-fyJ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="l4B-Qf-EW1">
@@ -252,6 +257,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgf-d0-2aJ">
+                                                <rect key="frame" x="360" y="8" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="settingsPressed:" destination="it1-m4-cJK" eventType="touchUpInside" id="WYF-sq-XZr"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -260,10 +272,12 @@
                                             <constraint firstItem="MnA-Uu-TUe" firstAttribute="top" secondItem="wFx-tB-KpH" secondAttribute="bottom" constant="40" id="Cra-s5-Nfg"/>
                                             <constraint firstItem="hfz-Cf-fCK" firstAttribute="top" secondItem="MnA-Uu-TUe" secondAttribute="bottom" constant="40" id="EGI-kg-9Lh"/>
                                             <constraint firstItem="hfz-Cf-fCK" firstAttribute="leading" secondItem="wFx-tB-KpH" secondAttribute="leading" id="JO9-A5-0U1"/>
+                                            <constraint firstItem="Rgf-d0-2aJ" firstAttribute="top" secondItem="uIw-Ts-FuT" secondAttribute="top" constant="8" id="JsH-b6-adR"/>
                                             <constraint firstItem="MnA-Uu-TUe" firstAttribute="centerX" secondItem="uIw-Ts-FuT" secondAttribute="centerX" id="KZ8-k0-VIv"/>
                                             <constraint firstItem="hfz-Cf-fCK" firstAttribute="trailing" secondItem="wFx-tB-KpH" secondAttribute="trailing" id="O1K-BB-rcU"/>
                                             <constraint firstItem="hfz-Cf-fCK" firstAttribute="centerX" secondItem="uIw-Ts-FuT" secondAttribute="centerX" id="b1U-6D-XMf"/>
                                             <constraint firstAttribute="height" constant="598" id="g40-ZB-xHx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rgf-d0-2aJ" secondAttribute="trailing" constant="8" id="gqX-6H-za0"/>
                                             <constraint firstItem="Ro2-6T-W0J" firstAttribute="top" secondItem="T5f-nk-Ph3" secondAttribute="bottom" constant="8" id="hJj-NL-UoR"/>
                                             <constraint firstItem="wFx-tB-KpH" firstAttribute="centerX" secondItem="uIw-Ts-FuT" secondAttribute="centerX" id="hPC-Ku-9gZ"/>
                                             <constraint firstItem="Ro2-6T-W0J" firstAttribute="centerX" secondItem="uIw-Ts-FuT" secondAttribute="centerX" id="lYj-PZ-6cM"/>
@@ -303,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyt-aU-nZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436" y="-685.00749625187416"/>
+            <point key="canvasLocation" x="1434.7826086956522" y="-685.04464285714278"/>
         </scene>
         <!--Quote View Controller-->
         <scene sceneID="FZ6-yB-VgW">

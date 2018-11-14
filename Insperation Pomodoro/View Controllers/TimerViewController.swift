@@ -130,7 +130,13 @@ class TimerViewController: UIViewController {
             self.errorLabel.isHidden = true
         }
     }
-   
+    
+    
+    @IBAction func settingsPressed(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "settingsVC") as! SettingsViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
 }
 
