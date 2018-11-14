@@ -8,12 +8,11 @@
 
 import Foundation
 class AppValues{
-    enum TimerValues : Float{
-        case ShortBreak = 5
-        case LongBreak = 15
-        case WorkSession = 25
+    static var shortBreak : Float!
+    static var longBreak : Float!
+    static var workSession : Float!
+    public static func toSeconds(timer : Float) -> Float{
+        return timer*60.0
     }
-    public static func toSeconds(timer : TimerValues) -> Float{
-        return timer.rawValue*60.0
-    }
+
 }

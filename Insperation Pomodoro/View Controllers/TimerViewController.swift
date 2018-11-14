@@ -36,11 +36,11 @@ class TimerViewController: UIViewController {
     }
     @IBAction func segmentChanged(_ sender: Any) {
         if typeSegment.selectedSegmentIndex == 0{
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.TimerValues.WorkSession)
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.workSession)
         } else if typeSegment.selectedSegmentIndex == 1 {
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.TimerValues.ShortBreak)
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.shortBreak)
         } else{
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.TimerValues.LongBreak)
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.longBreak)
         }
         if timerRunning{
             resetTimer()
@@ -58,7 +58,6 @@ class TimerViewController: UIViewController {
     }
     @IBAction func quoteButtonPressed(_ sender: Any) {
         quoteClient.getQuoteOfTheDay { (quote, error) in
-            print(quote)
             if error != nil{
                 DispatchQueue.main.async {
                     self.showError(error: error!)
@@ -106,7 +105,7 @@ class TimerViewController: UIViewController {
         playButton.tintColor = ColorPalette.orange
         typeSegment.tintColor = ColorPalette.lightGray
         quoteButton.tintColor = ColorPalette.green
-        progressBar.maxValue = CGFloat(AppValues.toSeconds(timer: AppValues.TimerValues.WorkSession))
+        progressBar.maxValue = CGFloat(AppValues.toSeconds(timer: AppValues.workSession))
         progressBar.value = 0
         playButton.setTitle("Start", for: .normal)
         errorLabel.textColor = ColorPalette.orange
