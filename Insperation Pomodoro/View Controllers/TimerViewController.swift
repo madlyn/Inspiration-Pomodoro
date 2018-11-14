@@ -31,6 +31,17 @@ class TimerViewController: UIViewController {
         startWiggling()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if typeSegment.selectedSegmentIndex == 0{
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.workSession)
+        } else if typeSegment.selectedSegmentIndex == 1 {
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.shortBreak)
+        } else{
+            maxTimeValue = AppValues.toSeconds(timer: AppValues.longBreak)
+        }
+        progressBar.maxValue = CGFloat(maxTimeValue)
+    }
+    
     @IBAction func playButtonPressed(_ sender: Any) {
         start()
     }
@@ -48,6 +59,8 @@ class TimerViewController: UIViewController {
         
         progressBar.maxValue = CGFloat(maxTimeValue)
     }
+    
+    
     
     func resetTimer(){
         progressBar.value = 0
