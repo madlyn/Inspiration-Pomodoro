@@ -29,7 +29,7 @@
 		143ED362219CCD04005EF092 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		143ED364219CD175005EF092 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		145F9459219C8BC300F618C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		14C7A331219B4B5E00E335CA /* Insperation Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insperation Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C7A331219B4B5E00E335CA /* Inspiration Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inspiration Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C7A334219B4B5E00E335CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C7A339219B4B5E00E335CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14C7A33B219B4B6000E335CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		14C7A328219B4B5E00E335CA = {
 			isa = PBXGroup;
 			children = (
-				14C7A333219B4B5E00E335CA /* Insperation Pomodoro */,
+				14C7A333219B4B5E00E335CA /* Inspiration Pomodoro */,
 				14C7A332219B4B5E00E335CA /* Products */,
 				070E5C62EE63DB51520C1F3F /* Pods */,
 				99624076B6251E7A6E9BFEE9 /* Frameworks */,
@@ -80,12 +80,12 @@
 		14C7A332219B4B5E00E335CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14C7A331219B4B5E00E335CA /* Insperation Pomodoro.app */,
+				14C7A331219B4B5E00E335CA /* Inspiration Pomodoro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		14C7A333219B4B5E00E335CA /* Insperation Pomodoro */ = {
+		14C7A333219B4B5E00E335CA /* Inspiration Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
 				14C7A334219B4B5E00E335CA /* AppDelegate.swift */,
@@ -97,7 +97,7 @@
 				14C7A33D219B4B6000E335CA /* LaunchScreen.storyboard */,
 				14C7A340219B4B6000E335CA /* Info.plist */,
 			);
-			path = "Insperation Pomodoro";
+			path = "Inspiration Pomodoro";
 			sourceTree = "<group>";
 		};
 		14C7A34E219C2FAF00E335CA /* Models */ = {
@@ -142,9 +142,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		14C7A330219B4B5E00E335CA /* Insperation Pomodoro */ = {
+		14C7A330219B4B5E00E335CA /* Inspiration Pomodoro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 14C7A343219B4B6000E335CA /* Build configuration list for PBXNativeTarget "Insperation Pomodoro" */;
+			buildConfigurationList = 14C7A343219B4B6000E335CA /* Build configuration list for PBXNativeTarget "Inspiration Pomodoro" */;
 			buildPhases = (
 				2C43713DD2C399AED82E3FEF /* [CP] Check Pods Manifest.lock */,
 				14C7A32D219B4B5E00E335CA /* Sources */,
@@ -157,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = "Insperation Pomodoro";
+			name = "Inspiration Pomodoro";
 			productName = InsperationTomato;
-			productReference = 14C7A331219B4B5E00E335CA /* Insperation Pomodoro.app */;
+			productReference = 14C7A331219B4B5E00E335CA /* Inspiration Pomodoro.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 14C7A32C219B4B5E00E335CA /* Build configuration list for PBXProject "Insperation Pomodoro" */;
+			buildConfigurationList = 14C7A32C219B4B5E00E335CA /* Build configuration list for PBXProject "Inspiration Pomodoro" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -195,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14C7A330219B4B5E00E335CA /* Insperation Pomodoro */,
+				14C7A330219B4B5E00E335CA /* Inspiration Pomodoro */,
 			);
 		};
 /* End PBXProject section */
@@ -430,7 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Insperation Pomodoro/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Inspiration Pomodoro/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Insperation Pomodoro/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Inspiration Pomodoro/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		14C7A32C219B4B5E00E335CA /* Build configuration list for PBXProject "Insperation Pomodoro" */ = {
+		14C7A32C219B4B5E00E335CA /* Build configuration list for PBXProject "Inspiration Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				14C7A341219B4B6000E335CA /* Debug */,
@@ -472,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		14C7A343219B4B6000E335CA /* Build configuration list for PBXNativeTarget "Insperation Pomodoro" */ = {
+		14C7A343219B4B6000E335CA /* Build configuration list for PBXNativeTarget "Inspiration Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				14C7A344219B4B6000E335CA /* Debug */,
