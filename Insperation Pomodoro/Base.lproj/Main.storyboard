@@ -335,11 +335,16 @@
                                             <constraint firstItem="Ro2-6T-W0J" firstAttribute="top" secondItem="hfz-Cf-fCK" secondAttribute="bottom" constant="40" id="wyA-NO-HTB"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ex3-wX-Zna">
+                                        <rect key="frame" x="197" y="374.66666666666669" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="uIw-Ts-FuT" firstAttribute="leading" secondItem="jwZ-lN-iVM" secondAttribute="leading" id="3Vg-tx-gbM"/>
+                                    <constraint firstItem="ex3-wX-Zna" firstAttribute="centerY" secondItem="jwZ-lN-iVM" secondAttribute="centerY" id="7YJ-f4-zXC"/>
                                     <constraint firstItem="uIw-Ts-FuT" firstAttribute="centerX" secondItem="jwZ-lN-iVM" secondAttribute="centerX" id="Dx1-im-FOA"/>
                                     <constraint firstItem="uIw-Ts-FuT" firstAttribute="centerX" secondItem="jwZ-lN-iVM" secondAttribute="centerX" id="JCW-Eh-DyU"/>
+                                    <constraint firstItem="ex3-wX-Zna" firstAttribute="centerX" secondItem="jwZ-lN-iVM" secondAttribute="centerX" id="Lzj-Av-xN1"/>
                                     <constraint firstAttribute="trailing" secondItem="uIw-Ts-FuT" secondAttribute="trailing" id="S9p-jo-pbK"/>
                                     <constraint firstItem="uIw-Ts-FuT" firstAttribute="top" secondItem="jwZ-lN-iVM" secondAttribute="top" id="gzV-F4-M2l"/>
                                     <constraint firstAttribute="bottom" secondItem="uIw-Ts-FuT" secondAttribute="bottom" id="l8K-MT-6yB"/>
@@ -357,6 +362,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Timer" image="rewind-time" id="mje-Rb-F7d"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ex3-wX-Zna" id="6m3-Fm-8fH"/>
                         <outlet property="container" destination="uIw-Ts-FuT" id="HKp-PG-X4s"/>
                         <outlet property="errorLabel" destination="T5f-nk-Ph3" id="bSD-Gr-iM0"/>
                         <outlet property="playButton" destination="MnA-Uu-TUe" id="QUm-Vf-if9"/>

@@ -18,6 +18,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var quoteButton: UIButton!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var timeValue: Float = 0.0
     var maxTimeValue : Float = 0.0
@@ -70,16 +71,16 @@ class TimerViewController: UIViewController {
         playButton.setTitle("Start", for: .normal)
     }
     @IBAction func quoteButtonPressed(_ sender: Any) {
-        errorLabel.text = "Loading..."
-        errorLabel.isHidden = false
+        activityIndicator.startAnimating()
         quoteClient.getQuoteOfTheDay { (quote, error) in
             if error != nil{
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
                     self.showError(error: error!)
                 }
             } else{
                 DispatchQueue.main.async {
-                    self.errorLabel.isHidden = true
+                    self.activityIndicator.stopAnimating()
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "quoteVC") as! QuoteViewController
                     vc.quote = quote
                     vc.isNew = true
