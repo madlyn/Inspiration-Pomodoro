@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: General networking class
 class NetworkClient{
     var session = URLSession.shared
     func getMethod(url : String, parameters : [String:AnyObject], completionHandler :@escaping (_ result: Data?, _ error: NSError?) -> Void){

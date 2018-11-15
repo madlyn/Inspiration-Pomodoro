@@ -32,6 +32,12 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
         table.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedResultsController = nil
+    }
+    
+    // MARK: CD Code
     fileprivate func setupFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Quote> = Quote.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
@@ -46,10 +52,32 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
             fatalError("The fetch could not be performed: \(error.localizedDescription)")
         }
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        fetchedResultsController = nil
+    
+    func deleteQuote(at indexPath: IndexPath) {
+        let quote = fetchedResultsController.object(at: indexPath)
+        dataController.viewContext.delete(quote)
+        try? dataController.viewContext.save()
+        table.reloadData()
     }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            table.deleteRows(at: [indexPath!], with: .fade)
+            break
+        default: break
+        }
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        table.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        table.endUpdates()
+    }
+    
+    // MARK: Table Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
@@ -72,12 +100,6 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
         default: ()
         }
     }
-    func deleteQuote(at indexPath: IndexPath) {
-        let quote = fetchedResultsController.object(at: indexPath)
-        dataController.viewContext.delete(quote)
-        try? dataController.viewContext.save()
-        table.reloadData()
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
@@ -85,26 +107,9 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "quoteVC") as! QuoteViewController
         vc.quote = quote
         vc.isNew = false
-//        self.present(vc, animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .delete:
-            table.deleteRows(at: [indexPath!], with: .fade)
-            break
-        default: break
-        }
-    }
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        table.beginUpdates()
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        table.endUpdates()
-    }
 }
 
 

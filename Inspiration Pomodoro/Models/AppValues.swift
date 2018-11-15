@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+// MARK: Changable values
 class AppValues{
     static var shortBreak : Float!
     static var longBreak : Float!

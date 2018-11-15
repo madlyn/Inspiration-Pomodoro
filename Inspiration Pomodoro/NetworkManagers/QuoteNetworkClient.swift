@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// MARK: A class that uses the general networking class to get quotes
 class QuoteNetworkClient{
     var dataController:DataController!
     var appDelegate : AppDelegate!

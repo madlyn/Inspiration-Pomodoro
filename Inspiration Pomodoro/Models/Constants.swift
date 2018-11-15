@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import SystemConfiguration
 
+// MARK: Networking Constatns
 class Constants{
     static let ApiScheme = "http"
     static let ApiHost = "quotes.rest"
     static let ApiPath = "/qod.json"
 }
 
+// MARK: Theme colors
 struct ColorPalette{
     public static let spaceGray = UIColor(red: 39/255.0, green: 39/255.0, blue: 39/255.0, alpha: 1)
     public static let green = UIColor(red: 161/255.0, green: 243/255.0, blue: 82/255.0, alpha: 1)
@@ -25,6 +27,7 @@ struct ColorPalette{
     public static let lightGray = UIColor(red: 193/255.0, green: 193/255.0, blue: 193/255.0, alpha: 1)
 }
 
+// MARK: Checking for internet
 func connectedToNetwork() -> Bool {
     
     var zeroAddress = sockaddr_in()

@@ -33,20 +33,20 @@ class TimerViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if typeSegment.selectedSegmentIndex == 0{
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.workSession)
-        } else if typeSegment.selectedSegmentIndex == 1 {
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.shortBreak)
-        } else{
-            maxTimeValue = AppValues.toSeconds(timer: AppValues.longBreak)
-        }
-        progressBar.maxValue = CGFloat(maxTimeValue)
+        setTimes()
     }
     
     @IBAction func playButtonPressed(_ sender: Any) {
         start()
     }
     @IBAction func segmentChanged(_ sender: Any) {
+        setTimes()
+        if timerRunning{
+            resetTimer()
+        }
+    }
+    // Changing maxTimeValue according to type
+    func setTimes(){
         if typeSegment.selectedSegmentIndex == 0{
             maxTimeValue = AppValues.toSeconds(timer: AppValues.workSession)
         } else if typeSegment.selectedSegmentIndex == 1 {
@@ -54,10 +54,6 @@ class TimerViewController: UIViewController {
         } else{
             maxTimeValue = AppValues.toSeconds(timer: AppValues.longBreak)
         }
-        if timerRunning{
-            resetTimer()
-        }
-        
         progressBar.maxValue = CGFloat(maxTimeValue)
     }
     
@@ -111,6 +107,8 @@ class TimerViewController: UIViewController {
             resetTimer()
         }
     }
+    
+    // Setting all the UI elements
     func  setView() {
         progressBar.valueIndicator = ""
         progressBar.outerRingColor = ColorPalette.orange
@@ -130,6 +128,7 @@ class TimerViewController: UIViewController {
         errorLabel.isHidden = true
     }
     
+    // Animating the quoteButton to catch the user's attention
     func startWiggling() {
         quoteButton.isHidden = false
         let angle = 0.1
