@@ -57,7 +57,6 @@ class QuoteNetworkClient{
                 quoteObject.id = quotes[0]["id"] as? String
                 quoteObject.quoteBody = quotes[0]["quote"] as? String
                 quoteObject.date = Date()
-//                                try? self.dataController.viewContext.save()
                 completionHandler(quoteObject,nil)
                 
                 

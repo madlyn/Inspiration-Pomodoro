@@ -14,6 +14,7 @@ class QuoteViewController: UIViewController {
     var dataController:DataController!
     var appDelegate : AppDelegate!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var customNavigationBar: UINavigationBar!
     
     @IBOutlet weak var textArea: UITextView!
     
@@ -23,6 +24,10 @@ class QuoteViewController: UIViewController {
         self.textArea.backgroundColor = ColorPalette.spaceGray
         if !isNew{
             saveButton.isHidden = true
+            customNavigationBar.isHidden = true
+            self.title = quote.author
+            var actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(presentActivity))
+            self.navigationItem.rightBarButtonItem = actionButton
         }
         
         self.textArea.textColor = .white
@@ -38,19 +43,33 @@ class QuoteViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func actionButtonPressed(_ sender: Any) {
+    @objc func presentActivity(){
         var textToShare = ""
         if let body = quote.quoteBody, let author = quote.author{
-             textToShare = body + "\n~" + author
+            textToShare = body + "\n~" + author
         }
         let activity = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
         activity.popoverPresentationController?.sourceView = self.view
         self.present(activity, animated: true, completion: nil)
     }
+    @IBAction func actionButtonPressed(_ sender: Any) {
+       presentActivity()
+    }
     
     @IBAction func savePressed(_ sender: Any) {
-        try? self.dataController.viewContext.save()
+        do{
+            try self.dataController.viewContext.save()
+            saveButton.isEnabled = false
+            saveButton.setTitle("Saved!", for: .normal)
+        }catch{
+            self.saveButton.setTitle("Error: Could not save", for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.saveButton.setTitle("Save", for: .normal)
+            }
+        }
+        
+        
+        
     }
     
     

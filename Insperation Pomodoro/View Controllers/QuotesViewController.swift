@@ -17,6 +17,8 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
         super.viewDidLoad()
         table.backgroundColor = ColorPalette.spaceGray
         view.backgroundColor = ColorPalette.spaceGray
+        self.navigationController?.title = "Favorite Quotes"
+        self.title = "Favorite Quotes"
         let delegate = UIApplication.shared.delegate as! AppDelegate
         dataController = delegate.dataController
         setupFetchedResultsController()
@@ -83,7 +85,8 @@ class QuotesViewController: UIViewController, UITableViewDataSource, NSFetchedRe
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "quoteVC") as! QuoteViewController
         vc.quote = quote
         vc.isNew = false
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {

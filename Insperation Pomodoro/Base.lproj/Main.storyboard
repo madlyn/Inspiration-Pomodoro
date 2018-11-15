@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quotes-->
+        <!--Quotes View Controller-->
         <scene sceneID="0Co-52-0uI">
             <objects>
                 <viewController id="Cjw-vE-TN4" customClass="QuotesViewController" customModule="Insperation_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBX-kF-bPQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9o-to-qw6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quoteCell" textLabel="Idh-Op-IFb" detailTextLabel="Dz4-Pi-X1Z" style="IBUITableViewCellStyleSubtitle" id="wdN-FB-6Rv">
@@ -53,37 +53,24 @@
                                     <outlet property="delegate" destination="Cjw-vE-TN4" id="AEg-i0-LI2"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feF-Bd-C0n">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Saved Quotes" id="FhQ-bo-Wc3"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="c9o-to-qw6" firstAttribute="trailing" secondItem="5KU-6F-EGT" secondAttribute="trailing" id="2De-QN-Rk9"/>
+                            <constraint firstItem="c9o-to-qw6" firstAttribute="top" secondItem="5KU-6F-EGT" secondAttribute="top" id="55W-5I-gC8"/>
                             <constraint firstItem="c9o-to-qw6" firstAttribute="bottom" secondItem="5KU-6F-EGT" secondAttribute="bottom" id="Llo-It-tdr"/>
-                            <constraint firstItem="feF-Bd-C0n" firstAttribute="leading" secondItem="5KU-6F-EGT" secondAttribute="leading" id="PrI-k0-PBs"/>
                             <constraint firstItem="c9o-to-qw6" firstAttribute="leading" secondItem="5KU-6F-EGT" secondAttribute="leading" id="bCz-CL-rsi"/>
-                            <constraint firstItem="c9o-to-qw6" firstAttribute="top" secondItem="feF-Bd-C0n" secondAttribute="bottom" id="lag-z3-dVH"/>
-                            <constraint firstItem="feF-Bd-C0n" firstAttribute="trailing" secondItem="5KU-6F-EGT" secondAttribute="trailing" id="nYe-5T-hak"/>
-                            <constraint firstItem="feF-Bd-C0n" firstAttribute="top" secondItem="5KU-6F-EGT" secondAttribute="top" id="qeG-jv-xdf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5KU-6F-EGT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Quotes" id="d7G-df-B8F"/>
+                    <navigationItem key="navigationItem" id="NPY-Wg-EPJ"/>
                     <connections>
                         <outlet property="table" destination="c9o-to-qw6" id="lHi-WX-iAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qG1-3L-71v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250.7246376811595" y="314.73214285714283"/>
+            <point key="canvasLocation" x="2160.8695652173915" y="314.73214285714283"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="NoD-GQ-9fe">
@@ -217,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kU-sK-L3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="154"/>
+            <point key="canvasLocation" x="3475.36231884058" y="153.34821428571428"/>
         </scene>
         <!--Timer-->
         <scene sceneID="0sx-vb-vUj">
@@ -448,6 +435,7 @@
                         <viewLayoutGuide key="safeArea" id="Ief-Fw-Ixw"/>
                     </view>
                     <connections>
+                        <outlet property="customNavigationBar" destination="S4u-Cj-zCz" id="6I6-5d-Q2y"/>
                         <outlet property="saveButton" destination="uzC-XI-rgA" id="Ymo-1Q-09P"/>
                         <outlet property="textArea" destination="t7q-0Q-6md" id="BKM-gi-lVl"/>
                     </connections>
@@ -469,12 +457,36 @@
                     </tabBar>
                     <connections>
                         <segue destination="it1-m4-cJK" kind="relationship" relationship="viewControllers" id="4xU-te-mIJ"/>
-                        <segue destination="Cjw-vE-TN4" kind="relationship" relationship="viewControllers" id="HJW-lg-miC"/>
+                        <segue destination="ymT-gr-haX" kind="relationship" relationship="viewControllers" id="HJW-lg-miC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toL-dV-xfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298" y="-20"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="57i-Wd-fHp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ymT-gr-haX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="d7G-df-B8F"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="riZ-7p-gyg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.68235294120000001" green="0.94509803920000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cjw-vE-TN4" kind="relationship" relationship="rootViewController" id="TB2-lf-vhT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMd-wJ-f6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250.7246376811595" y="314.73214285714283"/>
         </scene>
     </scenes>
     <resources>

@@ -70,6 +70,8 @@ class TimerViewController: UIViewController {
         playButton.setTitle("Start", for: .normal)
     }
     @IBAction func quoteButtonPressed(_ sender: Any) {
+        errorLabel.text = "Loading..."
+        errorLabel.isHidden = false
         quoteClient.getQuoteOfTheDay { (quote, error) in
             if error != nil{
                 DispatchQueue.main.async {
@@ -77,6 +79,7 @@ class TimerViewController: UIViewController {
                 }
             } else{
                 DispatchQueue.main.async {
+                    self.errorLabel.isHidden = true
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "quoteVC") as! QuoteViewController
                     vc.quote = quote
                     vc.isNew = true
