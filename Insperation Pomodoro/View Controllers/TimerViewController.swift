@@ -79,6 +79,7 @@ class TimerViewController: UIViewController {
                 DispatchQueue.main.async {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "quoteVC") as! QuoteViewController
                     vc.quote = quote
+                    vc.isNew = true
                     self.present(vc, animated: true, completion: nil)
                 }
             }

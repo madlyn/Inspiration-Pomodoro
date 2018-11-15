@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143ED361219CCC79005EF092 /* InsperationPomodoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 143ED35F219CCC79005EF092 /* InsperationPomodoro.xcdatamodeld */; };
+		143ED363219CCD04005EF092 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143ED362219CCD04005EF092 /* DataController.swift */; };
+		143ED365219CD175005EF092 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143ED364219CD175005EF092 /* QuotesViewController.swift */; };
 		145F945A219C8BC300F618C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145F9459219C8BC300F618C6 /* SettingsViewController.swift */; };
 		14C7A335219B4B5E00E335CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A334219B4B5E00E335CA /* AppDelegate.swift */; };
 		14C7A33A219B4B5E00E335CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C7A338219B4B5E00E335CA /* Main.storyboard */; };
@@ -15,7 +18,6 @@
 		14C7A347219B5B0700E335CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A346219B5B0700E335CA /* TimerViewController.swift */; };
 		14C7A349219BD04900E335CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A348219BD04900E335CA /* Constants.swift */; };
 		14C7A34B219BD05D00E335CA /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A34A219BD05D00E335CA /* AppValues.swift */; };
-		14C7A34D219C2EF500E335CA /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A34C219C2EF500E335CA /* Quote.swift */; };
 		14C7A352219C303C00E335CA /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A351219C303C00E335CA /* NetworkClient.swift */; };
 		14C7A354219C326E00E335CA /* QuoteNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A353219C326E00E335CA /* QuoteNetworkClient.swift */; };
 		14C7A35D219C464100E335CA /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7A35C219C464100E335CA /* QuoteViewController.swift */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		143ED360219CCC79005EF092 /* Quote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quote.xcdatamodel; sourceTree = "<group>"; };
+		143ED362219CCD04005EF092 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		143ED364219CD175005EF092 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
 		145F9459219C8BC300F618C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		14C7A331219B4B5E00E335CA /* Insperation Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Insperation Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C7A334219B4B5E00E335CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		14C7A346219B5B0700E335CA /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		14C7A348219BD04900E335CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14C7A34A219BD05D00E335CA /* AppValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppValues.swift; sourceTree = "<group>"; };
-		14C7A34C219C2EF500E335CA /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		14C7A351219C303C00E335CA /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		14C7A353219C326E00E335CA /* QuoteNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteNetworkClient.swift; sourceTree = "<group>"; };
 		14C7A35C219C464100E335CA /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +105,8 @@
 			children = (
 				14C7A348219BD04900E335CA /* Constants.swift */,
 				14C7A34A219BD05D00E335CA /* AppValues.swift */,
-				14C7A34C219C2EF500E335CA /* Quote.swift */,
+				143ED35F219CCC79005EF092 /* InsperationPomodoro.xcdatamodeld */,
+				143ED362219CCD04005EF092 /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				14C7A346219B5B0700E335CA /* TimerViewController.swift */,
 				14C7A35C219C464100E335CA /* QuoteViewController.swift */,
 				145F9459219C8BC300F618C6 /* SettingsViewController.swift */,
+				143ED364219CD175005EF092 /* QuotesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -266,12 +272,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143ED361219CCC79005EF092 /* InsperationPomodoro.xcdatamodeld in Sources */,
 				14C7A347219B5B0700E335CA /* TimerViewController.swift in Sources */,
 				14C7A35D219C464100E335CA /* QuoteViewController.swift in Sources */,
 				14C7A335219B4B5E00E335CA /* AppDelegate.swift in Sources */,
 				14C7A349219BD04900E335CA /* Constants.swift in Sources */,
+				143ED365219CD175005EF092 /* QuotesViewController.swift in Sources */,
+				143ED363219CCD04005EF092 /* DataController.swift in Sources */,
 				14C7A354219C326E00E335CA /* QuoteNetworkClient.swift in Sources */,
-				14C7A34D219C2EF500E335CA /* Quote.swift in Sources */,
 				14C7A34B219BD05D00E335CA /* AppValues.swift in Sources */,
 				14C7A352219C303C00E335CA /* NetworkClient.swift in Sources */,
 				145F945A219C8BC300F618C6 /* SettingsViewController.swift in Sources */,
@@ -474,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		143ED35F219CCC79005EF092 /* InsperationPomodoro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				143ED360219CCC79005EF092 /* Quote.xcdatamodel */,
+			);
+			currentVersion = 143ED360219CCC79005EF092 /* Quote.xcdatamodel */;
+			path = InsperationPomodoro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 14C7A329219B4B5E00E335CA /* Project object */;
 }

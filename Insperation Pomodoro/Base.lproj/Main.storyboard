@@ -10,21 +10,80 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Quotes-->
         <scene sceneID="0Co-52-0uI">
             <objects>
-                <viewController id="Cjw-vE-TN4" sceneMemberID="viewController">
+                <viewController id="Cjw-vE-TN4" customClass="QuotesViewController" customModule="Insperation_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBX-kF-bPQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c9o-to-qw6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="quoteCell" textLabel="Idh-Op-IFb" detailTextLabel="Dz4-Pi-X1Z" style="IBUITableViewCellStyleSubtitle" id="wdN-FB-6Rv">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wdN-FB-6Rv" id="Pzz-km-aYz">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Idh-Op-IFb">
+                                                    <rect key="frame" x="20.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dz4-Pi-X1Z">
+                                                    <rect key="frame" x="19.999999999999996" y="25.333333333333332" width="32.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.68235294120000001" green="0.94509803920000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Cjw-vE-TN4" id="8B9-lr-NQV"/>
+                                    <outlet property="delegate" destination="Cjw-vE-TN4" id="AEg-i0-LI2"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feF-Bd-C0n">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Saved Quotes" id="FhQ-bo-Wc3"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c9o-to-qw6" firstAttribute="trailing" secondItem="5KU-6F-EGT" secondAttribute="trailing" id="2De-QN-Rk9"/>
+                            <constraint firstItem="c9o-to-qw6" firstAttribute="bottom" secondItem="5KU-6F-EGT" secondAttribute="bottom" id="Llo-It-tdr"/>
+                            <constraint firstItem="feF-Bd-C0n" firstAttribute="leading" secondItem="5KU-6F-EGT" secondAttribute="leading" id="PrI-k0-PBs"/>
+                            <constraint firstItem="c9o-to-qw6" firstAttribute="leading" secondItem="5KU-6F-EGT" secondAttribute="leading" id="bCz-CL-rsi"/>
+                            <constraint firstItem="c9o-to-qw6" firstAttribute="top" secondItem="feF-Bd-C0n" secondAttribute="bottom" id="lag-z3-dVH"/>
+                            <constraint firstItem="feF-Bd-C0n" firstAttribute="trailing" secondItem="5KU-6F-EGT" secondAttribute="trailing" id="nYe-5T-hak"/>
+                            <constraint firstItem="feF-Bd-C0n" firstAttribute="top" secondItem="5KU-6F-EGT" secondAttribute="top" id="qeG-jv-xdf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5KU-6F-EGT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="d7G-df-B8F"/>
+                    <tabBarItem key="tabBarItem" title="Quotes" id="d7G-df-B8F"/>
+                    <connections>
+                        <outlet property="table" destination="c9o-to-qw6" id="lHi-WX-iAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qG1-3L-71v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="315"/>
+            <point key="canvasLocation" x="1250.7246376811595" y="314.73214285714283"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="NoD-GQ-9fe">
@@ -34,7 +93,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-Z2-Bs5">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-Z2-Bs5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="tintColor" red="0.68235294120000001" green="0.94509803920000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.1529411765" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,11 +224,11 @@
             <objects>
                 <viewController id="it1-m4-cJK" customClass="TimerViewController" customModule="Insperation_Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ww-1p-Y7K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwZ-lN-iVM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIw-Ts-FuT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="598"/>
@@ -351,7 +410,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Quote!" id="DHs-H6-GwV">
+                                    <navigationItem title="Quote of the Day!" id="DHs-H6-GwV">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="0Dg-7D-6WN">
                                             <connections>
                                                 <action selector="doneButtonPressed:" destination="cvh-gz-iiw" id="PiL-W1-Xim"/>
@@ -365,31 +424,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzC-XI-rgA">
+                                <rect key="frame" x="188" y="466" width="38" height="30"/>
+                                <state key="normal" title="Save!">
+                                    <color key="titleColor" red="0.68235294120000001" green="0.94509803920000002" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="cvh-gz-iiw" eventType="touchUpInside" id="YAr-7d-7dy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S4u-Cj-zCz" firstAttribute="trailing" secondItem="Ief-Fw-Ixw" secondAttribute="trailing" id="4uQ-CP-J3g"/>
                             <constraint firstItem="S4u-Cj-zCz" firstAttribute="leading" secondItem="Ief-Fw-Ixw" secondAttribute="leading" id="6Oj-Ni-Mw0"/>
+                            <constraint firstItem="uzC-XI-rgA" firstAttribute="centerX" secondItem="mZz-ow-Irq" secondAttribute="centerX" id="DlK-Pf-UiS"/>
                             <constraint firstItem="Ief-Fw-Ixw" firstAttribute="trailing" secondItem="t7q-0Q-6md" secondAttribute="trailing" constant="50" id="Mux-d2-FeM"/>
                             <constraint firstItem="S4u-Cj-zCz" firstAttribute="top" secondItem="Ief-Fw-Ixw" secondAttribute="top" id="OnS-il-0hs"/>
                             <constraint firstItem="t7q-0Q-6md" firstAttribute="leading" secondItem="Ief-Fw-Ixw" secondAttribute="leading" constant="50" id="PUV-Wc-a1j"/>
                             <constraint firstItem="t7q-0Q-6md" firstAttribute="top" secondItem="S4u-Cj-zCz" secondAttribute="bottom" constant="70" id="RBl-Gx-sr9"/>
+                            <constraint firstItem="uzC-XI-rgA" firstAttribute="top" secondItem="t7q-0Q-6md" secondAttribute="bottom" constant="8" id="flf-2f-757"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ief-Fw-Ixw"/>
                     </view>
                     <connections>
+                        <outlet property="saveButton" destination="uzC-XI-rgA" id="Ymo-1Q-09P"/>
                         <outlet property="textArea" destination="t7q-0Q-6md" id="BKM-gi-lVl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rc-yH-Tp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2595.6521739130435" y="-546.42857142857144"/>
+            <point key="canvasLocation" x="2594.202898550725" y="-546.42857142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uP5-zs-M2P">
             <objects>
                 <tabBarController id="zBZ-6o-YDd" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wiv-Wp-uIm">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Wiv-Wp-uIm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

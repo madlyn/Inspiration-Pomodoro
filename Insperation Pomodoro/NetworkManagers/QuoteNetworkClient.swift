@@ -7,12 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class QuoteNetworkClient{
+    var dataController:DataController!
+    var appDelegate : AppDelegate!
     public func getQuoteOfTheDay(completionHandler: @escaping (_ quote: Quote?, _ error: String?) -> Void){
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        dataController = appDelegate.dataController
         let client = NetworkClient()
         let parameters = [
-        "category" : "inspire"] as! [String:AnyObject]
+            "category" : "inspire"] as [String:AnyObject]
         client.getMethod(url: "", parameters: parameters) { (data, error) in
             guard (error == nil) else{
                 completionHandler(nil,error?.domain)
@@ -25,7 +30,7 @@ class QuoteNetworkClient{
                     completionHandler(nil,"There was a problem with retrieving the Quote")
                     return
                 }
-                var total = success["total"] as! Bool
+                let total = success["total"] as! Bool
                 guard (total == true) else{
                     print("2")
                     completionHandler(nil,"There was a problem with retrieving the Quote")
@@ -46,11 +51,13 @@ class QuoteNetworkClient{
                     completionHandler(nil,"There was a problem with retrieving the Quote")
                     return
                 }
-                print("Hellohe")
-                var quoteObject = Quote()
-                quoteObject.author = quotes[0]["author"] as! String
-                quoteObject.id = quotes[0]["id"] as! String
-                quoteObject.quoteBody = quotes[0]["quote"] as! String
+                
+                let quoteObject = Quote(context: self.dataController.viewContext)
+                quoteObject.author = quotes[0]["author"] as? String
+                quoteObject.id = quotes[0]["id"] as? String
+                quoteObject.quoteBody = quotes[0]["quote"] as? String
+                quoteObject.date = Date()
+//                                try? self.dataController.viewContext.save()
                 completionHandler(quoteObject,nil)
                 
                 

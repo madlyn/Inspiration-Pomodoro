@@ -10,6 +10,10 @@ import UIKit
 
 class QuoteViewController: UIViewController {
     var quote : Quote!
+    var isNew : Bool!
+    var dataController:DataController!
+    var appDelegate : AppDelegate!
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var textArea: UITextView!
     
@@ -17,9 +21,17 @@ class QuoteViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = ColorPalette.spaceGray
         self.textArea.backgroundColor = ColorPalette.spaceGray
+        if !isNew{
+            saveButton.isHidden = true
+        }
         
         self.textArea.textColor = .white
-        textArea.text = quote.quoteBody + "\n~" + quote.author
+        if let body = quote.quoteBody, let author = quote.author{
+            textArea.text = body + "\n~" + author
+        }
+        
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        dataController = appDelegate.dataController
 
     }
     
@@ -28,11 +40,18 @@ class QuoteViewController: UIViewController {
     }
     
     @IBAction func actionButtonPressed(_ sender: Any) {
-        var textToShare =  textArea.text = quote.quoteBody + "\n~" + quote.author
+        var textToShare = ""
+        if let body = quote.quoteBody, let author = quote.author{
+             textToShare = body + "\n~" + author
+        }
         let activity = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
         activity.popoverPresentationController?.sourceView = self.view
         self.present(activity, animated: true, completion: nil)
     }
     
-
+    @IBAction func savePressed(_ sender: Any) {
+        try? self.dataController.viewContext.save()
+    }
+    
+    
 }
