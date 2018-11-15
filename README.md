@@ -1,5 +1,6 @@
 # Inspiration-Pomodoro
 A simple Pomodoro Timer iOS App that shows daily quotes to boost your productivity!
+Made for learning purposes.
 # Installation 
 This project uses <a href="https://cocoapods.org/"> CocoPods</a> to organize external libraries. No installations are needed.
 # User Experience
