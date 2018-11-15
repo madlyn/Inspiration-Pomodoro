@@ -15,3 +15,4 @@ The following services and libraries were used in this project
 * <a href="https://www.flaticon.com">FLATICON</a>
 * <a href="https://logomakr.com">LogoMakr</a>
 * <a href="https://theysaidso.com/">They Said So</a>
+* <a href="https://makeappicon.com/">MakeAppIcon</a>
